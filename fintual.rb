@@ -16,7 +16,6 @@ MAX_DATE = Date.today
 #######################
 
 class Stock
-
   # Based on the assumption of the task:
   # - Prices will be a hash of dates and prices between 0.0 and 1.0
   attr_accessor :prices
@@ -54,7 +53,6 @@ class Portafolio
     cost = stocks.map{ |s| s.price(init_date) }.sum
     profit(init_date, end_date, false) / cost * 100
   end
-
 end
 
 
@@ -122,11 +120,11 @@ while !end_date
     end_date = get_date
     raise "Whoops! That date is either out of boundaries or older than the first date given" unless end_date.between?(init_date, MAX_DATE) || end_date > init_date
   rescue Date::Error => e
-    init_date = nil
+    end_date = nil
     p "Whoops! That's not the correct format.\n\n"
   rescue StandardError => e
     p e
-    init_date = nil
+    end_date = nil
   end
 end
 
