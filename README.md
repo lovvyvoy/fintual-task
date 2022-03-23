@@ -1,4 +1,4 @@
-# Fintual's Applicatiom Task
+# Fintual's Application Task
 
 ## Requirements
 - ruby 2.7
